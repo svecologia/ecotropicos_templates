@@ -1,11 +1,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ecotropicos-article.cls, v1.0, 2018/01/10
-% Developed by .
-% Modified from wiley-article.cls
+% Modified from wiley-article.cls by Luis Miguel Montilla
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ecotropicos-article}[2018/02/14, v1.3]
+\ProvidesClass{ecotropicos-article}[2018/02/14, v1.0]
 
 %% Definitions for adding journal elements
 \def\@jlogo{}
