@@ -433,11 +433,7 @@ FUNCTION {format.names}
                 { 't := }
                 { pop$ }
               if$
-              numnames #2 >
-                { "," * }
-                'skip$
-              if$
-              t "others" =
+               t "others" =
                 {
                   " " * bbl.etal *
                   bib.name.font
