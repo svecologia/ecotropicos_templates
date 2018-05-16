@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ecotropicos-article.cls, v1.0, 2018/01/10
-% Modified from wiley-article.cls by Luis Miguel Montilla
+% ecotropicos-article.cls, v1.0, 2018/05/16
+% Modified from wiley-article.cls by Luis Miguel Montilla and David Prieto-Torres
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \NeedsTeXFormat{LaTeX2e}

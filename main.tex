@@ -1,9 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % A template for Ecotropicos article submissions.
-% Modified from Wiley-article. 
+% Modified from Wiley-article.
 %
-% Please note that whilst this template provides a 
-% preview of the typeset manuscript for submission, it 
+% Please note that whilst this template provides a
+% preview of the typeset manuscript for submission, it
 % will not necessarily be the final publication layout.
 %
 % Usage notes:
@@ -31,13 +31,17 @@
 \definecolor{orcidlogocol}{HTML}{A6CE39}
 
 %Logo y sitio web
+%Logo and journalwebsite
 \jlogo{ecotropicos_logo}
 \jwebsite{\href{http://erevistas.saber.ula.ve/ecotropicos/}{saber.ula.ve/ecotropicos}}
-%Año
+%Año del volumen
+%Volume year
 \jyear{2018}
 %Volumen
+%Volume
 \jvolume{30}
 %Páginas
+%Pages
 \jpages{1-5}
 
 % Update article type if known
@@ -48,13 +52,18 @@
 %Nombre del editor a cargo
 \papereditor{Dr. Fulano de tal}
 
+%Fecha de recepcion del articulo
 \paperreceived{11-29-2010}
+
+%Fecha de aceptacion del articulo
 \paperaccepted{today}
+
+%Fecha de publicacion del articulo
 \paperonline{01-29-2011}
 
 %Titulo del trabajo
 \title{This is my title}
-%titulo corto para encabezado
+%titulo corto para el encabezado
 \runningtitle{titulo corto}
 
 % List abbreviations here, if any. Please note that it is preferred that abbreviations be defined at the first instance they appear in the text, rather than creating an abbreviations list.
@@ -62,9 +71,9 @@
 
 % Include full author names and degrees, when required by the journal.
 % Use the \authfn to add symbols for additional footnotes and present addresses, if any. Usually start with 1 for notes about author contributions; then continuing with 2 etc if any author has a different present address.
-\author[1\authfn{1}]{Author One PhD 
-	\href{http://orcid.org/0000-0000-0000-0000}		
-    {\textcolor{orcidlogocol}{\aiOrcid}}} 
+\author[1\authfn{1}]{Author One PhD
+	\href{http://orcid.org/0000-0000-0000-0000}
+    {\textcolor{orcidlogocol}{\aiOrcid}}}
 
 \author[2\authfn{1}]{Author A.~Two MD}
 \author[2\authfn{2}]{Author Three PhD}
@@ -82,22 +91,25 @@
 
 \presentadd[\authfn{2}]{Department, Institution, City, State or Province, Postal Code, Country}
 
+%Informacion sobre finaciamiento del proyecto. En caso de no existir, colocar N/A
 \fundinginfo{Funder One, Funder One Department, Grant/Award Number: 123456, 123457 and 123458; Funder Two, Funder Two Department, Grant/Award Number: 123459}
 
 % Include the name of the author that should appear in the running header
 \runningauthor{Author One et al.}
+%Lista de autores para la cita completa en primera pagina
 \authorslist{Nemo, C.; Strogoff, M.; Aronnax, P.}
 
 \begin{document}
 
 \maketitle
-
+% Resumen
 \begin{abstract}
-\begingroup  
+\begingroup
  \textbf{ABSTRACT}\\[0.35em]
 \endgroup
 This is a generic template designed for use by multiple journals, which includes several options for customization. Please consult the author guidelines for the journal to which you are submitting in order to confirm that your manuscript will comply with the journal's requirements. Please replace this text with your abstract.
 
+% Palabras clave.
 % Please include a maximum of seven keywords
 \keywords{keyword 1, \emph{keyword 2}, keyword 3, keyword 4, keyword 5, keyword 6, keyword 7}
 \end{abstract}
@@ -138,7 +150,7 @@ Please use a \verb|.bib| file to store your references. When using Overleaf to p
 
 You can find a video tutorial here to learn more about BibTeX: \url{https://www.overleaf.com/help/97-how-to-include-a-bibliography-using-bibtex}.
 
-This template provides two options for the citation and reference list style: 
+This template provides two options for the citation and reference list style:
 %\begin{description}
 %\item[Numerical style] Use %\verb|\documentclass[...,num-refs]{wiley-article}|
 %\item[Author-year style] Use \verb|\documentclass[...,alpha-refs]{ecotropicos-article}|
@@ -202,6 +214,10 @@ You may be asked to provide a conflict of interest statement during the submissi
 
 \textbf{\Large{Title of paper in alternative language}}
 
+\end{multicols}
+
+\begin{multicols*}{2}
+
 %\printendnotes
 
 
@@ -212,7 +228,7 @@ You may be asked to provide a conflict of interest statement during the submissi
 %Descomentar la sigueinte linea para articulos en espanol
 %\renewcommand\refname{Referencias}
 \bibliography{sample}
-\end{multicols}
+\end{multicols*}
 
 %\begin{biography}[example-image-1x1]{A.~One}
 %Please check with the journal's author guidelines whether author biographies are required. They are usually only included for review-type articles, and typically require photos and brief biographies (up to 75 words) for each author.
