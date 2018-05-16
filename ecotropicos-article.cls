@@ -358,7 +358,7 @@
   \ifdefempty{\@paperdoi}{}{\multicolumn{3}{@{}l}{DOI: \@paperdoi}}
   \end{tabularx}}
 
-  \fancyfoot[L]{%\fontsize{7\p@}{10pt}\selectfont%
+  \fancyfoot[L]{\fontsize{6.5\p@}{10pt}\selectfont%
    \setlength{\arrayrulewidth}{.5\p@}%
    \arrayrulecolor{black}\raggedright%
    %English footer
