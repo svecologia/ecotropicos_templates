@@ -432,7 +432,7 @@
   \hfill%
 %   \includegraphics[height=1.5em]{Wiley_Wordmark_black}%
 %   \quad%
-  \includegraphics[height=2em]{\@jlogo}}
+  \includegraphics[height=3em]{\@jlogo}}
   \\[2\p@]%
   {\fontsize{8\p@}{15\p@}%
   \ifxetexorluatex
