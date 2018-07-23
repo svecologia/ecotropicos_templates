@@ -4,7 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ecotropicos-article}[2018/02/14, v1.0]
+\ProvidesClass{ecotropicos-article}[2018/02/14, v1.3]
 
 %% Definitions for adding journal elements
 \def\@jlogo{}
@@ -351,9 +351,9 @@
   \begin{tabularx}{\textwidth}{@{}l | l | X @{}}%
   \ifdefempty{\@paperreceived}
     {\multicolumn{3}{l}{}}
-    {Received: \@paperreceived &
-  Accepted: \@paperaccepted &
-  Published: \@paperonline}
+    {Recibido: \@paperreceived &
+  Aceptado: \@paperaccepted &
+  Publicado: \@paperonline}
   \\\hline
   \ifdefempty{\@paperdoi}{}{\multicolumn{3}{@{}l}{DOI: \@paperdoi}}
   \end{tabularx}}
@@ -457,7 +457,7 @@
 \newcommand{\wiley@affilmetadata}{%
   \AB@affillist\par%
   \vskip10pt%
-  \textbf{Correspondence}\\
+  \textbf{Correspondencia}\\
   \@corraddress\\
   Email: \@corremail\par
   \ifx\empty\@presentaddress
@@ -467,11 +467,10 @@
     \@presentaddress\par
   \fi%
   \vskip10pt%
-  \textbf{Funding information}\\
+  \textbf{Financiamiento}\\
   \@fundinginfo\par
   \ifdefempty{\@papereditor}{}
-  {\vskip10pt \textbf{Associated editor:}\\
-  \@papereditor\par}
+  {\vskip10pt \textbf{Editor Académico:}\\ \@papereditor\par}
 }
 
 %% Abbreviations in the footnote
@@ -481,12 +480,12 @@
 \RequirePackage{changepage}
 \RequirePackage{environ}
 \reversemarginpar
-\newlength{\ecotropicos@affilmetadataheight}
-\newlength{\ecotropicos@abstractheight}
-\NewEnviron{ecotropicos@abstract}{%
+\newlength{\wiley@affilmetadataheight}
+\newlength{\wiley@abstractheight}
+\NewEnviron{wiley@abstract}{%
   \newcommand{\keywords}[1]{%
     \vskip8\p@%
-    \noindent{\bfseries\fontsize{7\p@}{13\p@}\allcaps[\ifxetexorluatex 20\else 200\fi]{keywords}\par}
+    \noindent{\bfseries\fontsize{7\p@}{13\p@}\allcaps[\ifxetexorluatex 20\else 200\fi]{{palabras \ clave}}\par}
     \noindent{\raggedright\fontsize{8\p@}{13\p@}\selectfont ##1\par}
   }%
   \strictpagecheck%
@@ -494,10 +493,10 @@
   \setlength{\marginparsep}{-47mm}%
   \setlength{\marginparwidth}{47mm}%
   %% Measure the height of the affil metadata in the sidebar
-  \settototalheight{\ecotropicos@affilmetadataheight}{\parbox{\marginparwidth}{\ecotropicos@affilmetadata}}%
-  \newsavebox{\ecotropicos@abstractbox}%
+  \settototalheight{\wiley@affilmetadataheight}{\parbox{\marginparwidth}{\wiley@affilmetadata}}%
+  \newsavebox{\wiley@abstractbox}%
   %% Save the abstract text in a box
-  \savebox{\ecotropicos@abstractbox}{%
+  \savebox{\wiley@abstractbox}{%
     \parbox{\linewidth}{%
     \begin{mdframed}[font=\fontsize{9\p@}{15\p@}\selectfont,
       topline=false,bottomline=false,
@@ -508,9 +507,9 @@
       \BODY
     \end{mdframed}}%
   }%
-  \settototalheight{\ecotropicos@abstractheight}{\usebox{\ecotropicos@abstractbox}}%
-  \marginpar{\ecotropicos@affilmetadata}\vskip-1.5em%
-  \begin{mdframed}[font=\fontsize{9\p@}{15\p@}\selectfont,
+  \settototalheight{\wiley@abstractheight}{\usebox{\wiley@abstractbox}}%
+  \marginpar{\wiley@affilmetadata}\vskip-1.5em%
+  \begin{mdframed}[font=\fontsize{9\p@}{10.5\p@}\selectfont,
   topline=false,bottomline=false,
   leftline=true,rightline=false,
   backgroundcolor=black!10,
@@ -520,13 +519,13 @@
   \end{mdframed}%
   %% If the affildata is taller than the abstract, add vskip
   \ifdimgreater
-    {\ecotropicos@affilmetadataheight}
-    {\ecotropicos@abstractheight}
-    {\vskip\dimexpr\ecotropicos@affilmetadataheight-\ecotropicos@abstractheight+\baselineskip\relax}{}
+    {\wiley@affilmetadataheight}
+    {\wiley@abstractheight}
+    {\vskip\dimexpr\wiley@affilmetadataheight-\wiley@abstractheight+\baselineskip\relax}{}
 }[\end{adjustwidth*}]%
 
-\renewcommand{\abstract}{\ecotropicos@abstract}
-\renewcommand{\endabstract}{\endecotropicos@abstract}
+\renewcommand{\abstract}{\wiley@abstract}
+\renewcommand{\endabstract}{\endwiley@abstract}
 
 % quotes and epigraphs
 \RequirePackage{quoting}
