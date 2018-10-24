@@ -1,0 +1,169 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A template for Ecotropicos article submissions.
+% Modified from Wiley-article.
+%
+% Please note that whilst this template provides a
+% preview of the typeset manuscript for submission, it
+% will not necessarily be the final publication layout.
+%
+% Usage notes:
+% The "blind" option will make anonymous all author, affiliation, correspondence and funding information.
+% Use "num-refs" option for numerical citation and references style.
+% Use "alpha-refs" option for author-year citation and references style.
+
+\documentclass[alpha-refs,serif]{ecotropicos-article}
+% \documentclass[blind,num-refs]{wiley-article}
+
+%%%% If using XELATEX OR LUALATEX, uncomment this following line.
+%%%% You must then also change \boldsymbol to \symbf,
+%%%% if you want to use any bold math symbols.
+\setmathfont[Extension=.otf, BoldFont=*bold]{xits-math}
+
+% Add additional packages here if required
+\usepackage{siunitx}
+\usepackage{multicol}
+\usepackage[utf8]{inputenc}
+\usepackage{academicons}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[format=plain,justification=justified,]{caption}
+
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+
+%Logo y sitio web
+%Logo and journalwebsite
+\jlogo{ecotropicos.jpg}
+\jwebsite{\href{http://erevistas.saber.ula.ve/ecotropicos/}{saber.ula.ve/ecotropicos}}
+%Año del volumen
+%Volume year
+\jyear{2018}
+%Volumen
+%Volume
+\jvolume{30}
+%Páginas
+%Pages
+\jpages{1-5}
+
+% Update article type if known
+\papertype{Original Article}
+% Include section in journal if known, otherwise delete
+%\paperfield{Journal Section}
+
+%Nombre del editor a cargo
+\papereditor{Dr. Editor Académico}
+
+%Fecha de recepcion del articulo
+\paperreceived{11-29-2010}
+
+%Fecha de aceptacion del articulo
+\paperaccepted{today}
+
+%Fecha de publicacion del articulo
+\paperonline{01-29-2011}
+
+%Titulo del trabajo
+\title{This is the best paper ever written in the world}
+%titulo corto para el encabezado
+\runningtitle{titulo corto}
+
+% List abbreviations here, if any. Please note that it is preferred that abbreviations be defined at the first instance they appear in the text, rather than creating an abbreviations list.
+%\abbrevs{ABC, a black cat; DEF, doesn't ever fret; GHI, goes home immediately. test}
+
+% Include full author names and degrees, when required by the journal.
+% Use the \authfn to add symbols for additional footnotes and present addresses, if any. Usually start with 1 for notes about author contributions; then continuing with 2 etc if any author has a different present address.
+\author[1\authfn{1}]{Author One PhD
+	\href{http://orcid.org/0000-0000-0000-0000}
+    {\textcolor{orcidlogocol}{\aiOrcid}}}
+
+\author[2\authfn{1}]{Author A.~Two MD}
+\author[2\authfn{2}]{Author Three PhD}
+\author[2]{Author B.~Four}
+
+%contribución de los autores
+%\contrib[\authfn{1}]{Equally contributing authors.}
+
+% Include full affiliation details for all authors
+\affil[1]{Department, Institution, City, State or Province, Postal Code, Country}
+\affil[2]{Department, Institution, City, State or Province, Postal Code, Country}
+
+\corraddress{Author One PhD, Department, Institution, City, State or Province, Postal Code, Country}
+\corremail{correspondingauthor@email.com}
+
+\presentadd[\authfn{2}]{Department, Institution, City, State or Province, Postal Code, Country}
+
+%Informacion sobre finaciamiento del proyecto. En caso de no existir, colocar N/A
+\fundinginfo{Funder One, Funder One Department, Grant/Award Number: 123456, 123457 and 123458; Funder Two, Funder Two Department, Grant/Award Number: 123459}
+
+% Include the name of the author that should appear in the running header
+\runningauthor{Author One et al.}
+%Lista de autores para la cita completa en primera pagina
+\authorslist{Nemo, C.; Strogoff, M.; Aronnax, P.}
+
+\begin{document}
+
+\maketitle
+% Resumen
+\begin{abstract}
+
+%\begingroup
+% \textbf{ABSTRACT}\\[0.35em]
+%\endgroup
+
+\hspace{1.5em} 
+\keywords{keyword1, \emph{keyword2}, keyword3, keyword4}
+
+Eget aenean auctor aliquet in mauris. Sed nibh vel molestie urna ea neque massa amet aliquam pede felis neque ac recusandae eros bibendum aptent proin nunc ultricies sit et lectus. Vestibulum ligula curabitur erat semper vehicula. Blandit rutrum platea. Cras posuere fringilla. Amet dolor libero. Condimentum cursus nibh. Fusce mauris sodales curabitur quisque rutrum. Adipiscing cursus diam. At sollicitudin id vestibulum commodo praesent. Felis vestibulum scelerisque. Donec nulla ante. Proin et nibh massa mauris blandit. Commodo duis non. Rerum magna dolor. Adipiscing per non. Ac facilisi lobortis nunc malesuada orci. Nonummy sit id porttitor dolor consectetuer. 
+
+Eget aenean auctor aliquet in mauris. Sed nibh vel molestie urna ea neque massa amet aliquam pede felis neque ac recusandae eros bibendum aptent proin nunc ultricies sit et lectus. Vestibulum ligula curabitur erat semper vehicula. Blandit rutrum platea. Cras posuere fringilla. Amet dolor libero. Condimentum cursus nibh. Fusce mauris sodales curabitur quisque rutrum. Adipiscing cursus diam. At sollicitudin id vestibulum commodo praesent. Felis vestibulum scelerisque. Donec nulla ante. Proin et nibh massa mauris blandit. Commodo duis non. Rerum magna dolor. Adipiscing per non. Ac facilisi lobortis nunc malesuada orci. Nonummy sit id porttitor dolor consectetuer. 
+
+Nunc elit justo vitae at suspendisse id quam rhoncus interdum donec mauris. Tellus proin suspendisse. Donec ultricies dictum a in vitae dui ullamcorper varius orci nulla nec amet eget magna. Purus urna duis vel lacus molestie vitae nostra nunc. In mauris nulla wisi aliquam id in aliquam ligula morbi tempor quis praesent neque velit.
+
+\end{abstract}
+\vspace{-2em}
+
+\begin{multicols}{2}
+
+Lorem ipsum dolor. Sit amet orci. Quam condimentum eget pellentesque pellentesque laoreet. Dictum a torquent. Magna ipsum nam. In mauris nulla wisi aliquam id in aliquam ligula morbi tempor quis praesent neque velit. Neque est interdum dolor nunc cras donec nunc pellentesque. Sit maecenas felis est ut a congue convallis ea. Consequat et orci malesuada imperdiet arcu. Fermentum dapibus elementum eu libero luctus. A mauris est at ligula ut vel phasellus dui. Et magna lobortis. Lorem ultrices suspendisse. Pretium id orci. Dolore metus nec in sed nam iaculis posuere blandit.
+
+Urna ut conubia interdum sem augue consequat dis ipsum. Non suspendisse vitae. Vel nulla integer. Eget aenean auctor aliquet in mauris. Sed nibh vel molestie urna ea neque massa amet aliquam pede felis neque ac recusandae eros bibendum aptent proin nunc ultricies sit et lectus. Vestibulum ligula curabitur erat semper vehicula. Blandit rutrum platea. Cras posuere fringilla. Amet dolor libero. Condimentum cursus nibh. Fusce mauris sodales curabitur quisque rutrum. Adipiscing cursus diam. At sollicitudin id vestibulum commodo praesent. Felis vestibulum scelerisque. Donec nulla ante. Proin et nibh massa mauris blandit. Commodo duis non. Rerum magna dolor. Adipiscing per non. Ac facilisi lobortis nunc malesuada orci. Nonummy sit id porttitor dolor consectetuer. Nunc elit justo vitae at suspendisse id quam rhoncus interdum donec mauris. Tellus proin suspendisse. Donec ultricies dictum a in vitae dui ullamcorper varius orci nulla nec amet eget magna. Purus urna duis vel lacus molestie vitae nostra nunc.
+
+Euismod duis donec. Cras elit fames. Pede mollis blandit faucibus volutpat ipsum. Nulla rutrum vulputate turpis dapibus interdum bibendum egestas eros interdum ligula nullam. Phasellus vel donec. Molestie amet mauris tincidunt eget eget. Faucibus elit risus. In perferendis dictum et amet tellus. Ut consequat sit ut eros sed. Sociosqu imperdiet vulputate at feugiat parturient vehicula aenean elementum quam dui et.
+
+
+
+
+\section*{acknowledgements}
+Acknowledgements should include contributions from anyone who does not meet the criteria for authorship (for example, to recognize contributions from people who provided technical help, collation of data, writing assistance, acquisition of funding, or a department chairperson who provided general support), as well as any funding or other support information.
+
+\section*{conflict of interest}
+You may be asked to provide a conflict of interest statement during the submission process. Please check the journal's author guidelines for details on what to include in this section. Please ensure you liaise with all co-authors to confirm agreement with the final statement.
+
+\section*{Resumen-abstract}
+
+\textbf{\Large{Title of paper in alternative language}}
+
+\end{multicols}
+
+\begin{multicols*}{2}
+
+%\printendnotes
+
+
+
+% Submissions are not required to reflect the precise reference formatting of the journal (use of italics, bold etc.), however it is important that all key elements of each reference are included.
+
+
+%Descomentar la sigueinte linea para articulos en espanol
+%\renewcommand\refname{Referencias}
+\bibliography{sample}
+\end{multicols*}
+
+%\begin{biography}[example-image-1x1]{A.~One}
+%Please check with the journal's author guidelines whether author biographies are required. They are usually only included for review-type articles, and typically require photos and brief biographies (up to 75 words) for each author.
+%\bigskip
+%\bigskip
+%\end{biography}
+
+%\graphicalabstract{example-image-1x1}{Please check the journal's author guildines for whether a graphical abstract, key points, new findings, or other items are required for display in the Table of Contents.}
+
+\end{document}
