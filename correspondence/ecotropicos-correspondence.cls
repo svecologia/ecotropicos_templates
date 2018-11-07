@@ -30,6 +30,8 @@
 \def\@papereditor{}
 \def\@authorslist{}
 
+\def\@corrkeywords{}
+
 \newif\if@numrefs
 \newif\if@alpharefs
 \newif\if@amsrefs
@@ -207,6 +209,8 @@
 \newcommand{\paperfield}[1]{\def\@paperfield{#1}}
 
 \newcommand{\authorslist}{\def\@authorslist}
+
+\newcommand{\corrkeywords}[1]{\def\@corrkeywords{#1}}
 
 % normal font is 8pt/13pt
 \RequirePackage{scrextend}
@@ -471,6 +475,10 @@
   \@fundinginfo\par
   \ifdefempty{\@papereditor}{}
   {\vskip10pt \textbf{Editor Académico:}\\ \@papereditor\par}
+    \vskip10pt%
+  \textbf{Palabras clave}\\
+  \@corrkeywords\par
+  \ifdefempty{\@papereditor}{}
 }
 
 %% Abbreviations in the footnote
