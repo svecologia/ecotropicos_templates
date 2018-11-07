@@ -474,7 +474,7 @@
   \textbf{Financiamiento}\\
   \@fundinginfo\par
   \ifdefempty{\@papereditor}{}
-  {\vskip10pt \textbf{Editor Académico:}\\ \@papereditor\par}
+  {\vskip10pt \textbf{Editor Académico}\\ \@papereditor\par}
     \vskip10pt%
   \textbf{Palabras clave}\\
   \@corrkeywords\par
