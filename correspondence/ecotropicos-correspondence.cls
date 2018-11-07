@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ecotropicos-article.cls, v1.0, 2018/05/16
+% ecotropicos-correspondence.cls, v1.0, 2018/11/17
 % Modified from wiley-article.cls by Luis Miguel Montilla, Emanuel Valero, and David Prieto-Torres
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
