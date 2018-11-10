@@ -6,7 +6,7 @@
 %%
 %% merlin.mbs  (with options: `ay,nat,nm-rvx,ed-rev,jnrlst,nmlm,x10,x0,m10,m0,mcite,mct-1,mct-x2,nmft,nmft-bf,keyxyr,blkyear,dt-beg,yr-per,dtbf,atit-u,vol-bf,vnum-x,volp-sp,pp-last,num-xser,numser,ser-vol,ser-ed,jnm-x,pg-bk,add-pub,pre-edn,isbn,doi,edparxc,bkedcap,in-col,pp,ed,xedn,amper,url,url-blk,nfss,')
 %% ----------------------------------------
-%% *** BibTeX style for Ecotropicos, Journal of the Venezuelan Ecological Society ***
+%% *** BibTeX style for Ecotropicos, Journal of the Venezuelan Ecology Society ***
 %% 
 %% Copyright 1994-2011 Patrick W Daly
  % ===============================================================
