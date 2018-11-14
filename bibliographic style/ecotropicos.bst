@@ -263,6 +263,7 @@ FUNCTION {bbl.nr}
 { "no." }
 
 FUNCTION {bbl.in}
+%{ "en" } %para espanol
 { "in" }
 
 FUNCTION {bbl.pages}
