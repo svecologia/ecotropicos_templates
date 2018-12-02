@@ -4,7 +4,7 @@
 %%
 %% The original source files were:
 %%
-%% merlin.mbs  (with options: `ay,nat,nm-rvx,ed-rev,jnrlst,nmlm,x10,x0,m10,m0,mcite,mct-1,mct-x2,nmft,nmft-bf,keyxyr,blkyear,dt-beg,yr-per,yrp-per,dtbf,atit-u,vol-bf,vnum-x,volp-sp,num-xser,jnm-x,pg-bk,pre-pub,edparxc,bkedcap,in-col,pp,ed,xedn,amper,url,url-blk,nfss,')
+%% merlin.mbs  (with options: `ay,nat,nm-rvx,ed-rev,jnrlst,nmlm,x10,x0,m10,m0,mcite,mct-1,mct-x2,nmft,nmft-bf,keyxyr,blkyear,dt-beg,yr-per,yrp-per,dtbf,atit-u,vol-bf,vnum-x,volp-sp,num-xser,jnm-x,pg-bk,pre-pub,edparxc,bkedcap,in-col,pp,ed,xedn,amper,and-xcom,etal-it,url,url-blk,nfss,')
 %% ----------------------------------------
 %% *** BibTeX style for Ecotropicos, Journal of the Venezuelan Ecology Society ***
 %% 
@@ -263,8 +263,8 @@ FUNCTION {bbl.nr}
 { "no." }
 
 FUNCTION {bbl.in}
-%{ "en" } %para espanol
-{ "in" }
+{ "en" } %para espanol
+%{ "in" }
 
 FUNCTION {bbl.pages}
 { "pp." }
@@ -432,14 +432,10 @@ FUNCTION {format.names}
                 { 't := }
                 { pop$ }
               if$
-              numnames #2 >
-                { "," * }
-                'skip$
-              if$
               t "others" =
                 {
-                  " " * bbl.etal *
                   bib.name.font
+                  " " * bbl.etal emphasize *
                 }
                 {
                   "\&"
@@ -549,13 +545,9 @@ FUNCTION {format.full.names}
               if$
               t "others" =
                 {
-                  " " * bbl.etal *
+                  " " * bbl.etal emphasize *
                 }
                 {
-                  numnames #2 >
-                    { "," * }
-                    'skip$
-                  if$
                   "\&"
                   space.word * t *
                 }
@@ -1278,13 +1270,9 @@ FUNCTION {format.lab.names}
               if$
               t "others" =
                 {
-                  " " * bbl.etal *
+                  " " * bbl.etal emphasize *
                 }
                 {
-                  numnames #2 >
-                    { "," * }
-                    'skip$
-                  if$
                   "\&"
                   space.word * t *
                 }
@@ -1559,7 +1547,8 @@ FUNCTION {begin.bib}
   write$ newline$
   "\providecommand{\url}[1]{\texttt{#1}}"
   write$ newline$
-  "\providecommand{\urlprefix}{URL }"
+  %"\providecommand{\urlprefix}{Available at: }" %english
+  "\providecommand{\urlprefix}{Disponible en: }"
   write$ newline$
 }
 EXECUTE {begin.bib}
@@ -1572,4 +1561,4 @@ FUNCTION {end.bib}
 EXECUTE {end.bib}
 %% End of customized bst file
 %%
-%% End of file `newtest.bst'.
+%% End of file `ecotropicos.bst'.

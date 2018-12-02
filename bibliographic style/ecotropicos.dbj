@@ -600,10 +600,10 @@ End of customized bst file
 %------\ans=a(==amper)-------
 %>>AMPERSAND:
 %<<COMMA BEFORE `AND':
-    %: (def) Comma before `and' as `Tom, Dick, and Harry'
-% and-xcom,%: No comma before `and' as `Tom, Dick and Harry'
+%: (def) Comma before `and' as `Tom, Dick, and Harry'
+	and-xcom,%: No comma before `and' as `Tom, Dick and Harry'
 % and-com,%: Comma even with 2 authors as `Tom, and Harry'
-%------\ans=*(==)-------
+%------\ans=*(==and-xcom)-------
 %>>COMMA BEFORE `AND':
 %<<COMMA BEFORE `AND' EVEN FOR COLLECTION EDITORS (if using comma before `and' with authors)
 % and-com-ed,%: Comma with 2 editors in collections
@@ -621,10 +621,10 @@ End of customized bst file
 %------\ans=*(==)-------
 %>>COMMA BEFORE `ET AL':
 %<<FONT OF `ET AL':
-    %: (def) Plain et al 
-% etal-it,%: Italic et al 
+%: (def) Plain et al 
+	etal-it,%: Italic et al 
 % etal-rm,%: Roman et al even when authors something else
-%------\ans=*(==)-------
+%------\ans=*(==etal-it)-------
 %>>FONT OF `ET AL':
 %<<ADDITIONAL REVTeX DATA FIELDS:
     %: (def) No additional fields for REVTeX
