@@ -367,7 +367,7 @@
    \arrayrulecolor{black}\raggedright%
    %English footer
    %\textbf{How to cite this article:} \@authorslist~\@jyear. \@title. \@jname. \@jvolume: \@jpages   \\[3\p@]
-   \textbf{Cómo citar este artículo:} \@authorslist~ \@jyear. \@title. \@jname. \@jvolume: \@jpages   \\[3\p@]
+   \textbf{Cómo citar este artículo:} \@authorslist~ \@jyear. \@title. \@jname\enskip \@jvolume: \@jpages   \\[3\p@]
    \begingroup
   \fontsize{7\p@}{13\p@}\selectfont%
   \begin{tabularx}{\textwidth}{@{}X  >{\centering\arraybackslash}X  r | r @{}}%
