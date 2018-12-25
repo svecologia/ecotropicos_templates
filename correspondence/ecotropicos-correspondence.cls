@@ -93,7 +93,8 @@
 \RequirePackage{academicons}
 \definecolor{orcidlogocol}{HTML}{A6CE39}
 
-
+\usepackage{url}
+\urlstyle{same}
 
 \newif\ifxetexorluatex
 \ifxetex
