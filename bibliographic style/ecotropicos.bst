@@ -1,13 +1,13 @@
 %%
-%% This is file `ecotropicos.bst',
+%% This is file `ecotropicos2024.bst',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% merlin.mbs  (with options: `ay,nat,nm-rvx,ed-rev,jnrlst,nmlm,x10,x0,m10,m0,mcite,mct-1,mct-x2,nmft,nmft-bf,keyxyr,blkyear,dt-beg,yr-per,yrp-per,dtbf,atit-u,vol-bf,vnum-x,volp-sp,num-xser,jnm-x,pg-bk,pre-pub,edparxc,bkedcap,in-col,pp,ed,xedn,amper,and-xcom,etal-it,url,url-blk,nfss,')
+%% merlin.mbs  (with options: `ay,nat,nm-rvx,ed-rev,jnrlst,mcite,mct-1,mct-x2,nmft,nmft-bf,keyxyr,blkyear,dt-beg,yr-per,yrp-per,dtbf,vol-bf,num-xser,jnm-x,pg-bk,pre-edn,isbn,url-doi,edparxc,bkedcap,in-col,pp,ed,xedn,amper,etal-it,url,url-blk,nfss,')
 %% ----------------------------------------
-%% *** BibTeX style for Ecotropicos, Journal of the Venezuelan Ecology Society ***
-%% 
+%% *** BibTeX style for Ecotropicos, Journal of the Venezuelan Ecology Society *** 
+%%
 %% Copyright 1994-2011 Patrick W Daly
  % ===============================================================
  % IMPORTANT NOTICE:
@@ -56,11 +56,13 @@ ENTRY
     author
     booktitle
     chapter
+    doi
     edition
     editor
     eid
     howpublished
     institution
+    isbn
     journal
     key
     month
@@ -263,8 +265,7 @@ FUNCTION {bbl.nr}
 { "no." }
 
 FUNCTION {bbl.in}
-{ "en" } %para espanol
-%{ "in" }
+{ "in" }
 
 FUNCTION {bbl.pages}
 { "pp." }
@@ -386,7 +387,10 @@ FUNCTION {bibinfo.warn}
 }
 FUNCTION {format.url}
 {
-  url
+  doi empty$
+    { url }
+    { "https://doi.org/" doi * }
+  if$
   duplicate$ empty$
     { pop$ "" }
     { "\urlprefix\url{" swap$ * "}" * }
@@ -415,22 +419,16 @@ FUNCTION {format.names}
       't :=
       nameptr #1 >
         {
-          nameptr #0
-          #10 +
-          #1 + =
-          numnames #0
-          #10 +
-          > and
-            { "others" 't :=
-              #1 'namesleft := }
-            'skip$
-          if$
           namesleft #1 >
             { ", " * t * }
             {
               s nameptr "{ll}" format.name$ duplicate$ "others" =
                 { 't := }
                 { pop$ }
+              if$
+              numnames #2 >
+                { "," * }
+                'skip$
               if$
               t "others" =
                 {
@@ -491,6 +489,16 @@ FUNCTION {format.book.pages}
     { " " * bbl.pages * }
   if$
 }
+FUNCTION {format.isbn}
+{ isbn "isbn" bibinfo.check
+  duplicate$ empty$ 'skip$
+    {
+      new.block
+      "ISBN " swap$ *
+    }
+  if$
+}
+
 FUNCTION {format.note}
 {
  note empty$
@@ -512,6 +520,9 @@ FUNCTION {format.note}
 
 FUNCTION {format.title}
 { title
+  duplicate$ empty$ 'skip$
+    { "t" change.case$ }
+  if$
   "title" bibinfo.check
 }
 FUNCTION {format.full.names}
@@ -526,16 +537,6 @@ FUNCTION {format.full.names}
       't :=
       nameptr #1 >
         {
-          nameptr #0
-          #10 +
-          #1 + =
-          numnames #0
-          #10 +
-          > and
-            { "others" 't :=
-              #1 'namesleft := }
-            'skip$
-          if$
           namesleft #1 >
             { ", " * t * }
             {
@@ -548,6 +549,10 @@ FUNCTION {format.full.names}
                   " " * bbl.etal emphasize *
                 }
                 {
+                  numnames #2 >
+                    { "," * }
+                    'skip$
+                  if$
                   "\&"
                   space.word * t *
                 }
@@ -775,7 +780,7 @@ FUNCTION {format.journal.pages}
     { swap$ duplicate$ empty$
         { pop$ pop$ format.pages }
         {
-          ": " *
+          ":" *
           swap$
           n.dashify
           "pages" bibinfo.check
@@ -790,7 +795,7 @@ FUNCTION {format.journal.eid}
   duplicate$ empty$ 'pop$
     { swap$ duplicate$ empty$ 'skip$
       {
-          ": " *
+          ":" *
       }
       if$
       swap$ *
@@ -805,6 +810,16 @@ FUNCTION {format.vol.num.pages}
     }
   if$
   bolden
+  number "number" bibinfo.check duplicate$ empty$ 'skip$
+    {
+      swap$ duplicate$ empty$
+        { "there's a number but no volume in " cite$ * warning$ }
+        'skip$
+      if$
+      swap$
+      "(" swap$ * ")" *
+    }
+  if$ *
   eid empty$
     { format.journal.pages }
     { format.journal.eid }
@@ -969,6 +984,7 @@ FUNCTION {book}
     { format.bvolume output
       new.block
       format.number.series output
+      format.edition output
       new.sentence
       format.publisher.address output
     }
@@ -977,7 +993,7 @@ FUNCTION {book}
       format.book.crossref output.nonnull
     }
   if$
-  format.edition output
+  format.isbn output
   format.book.pages output
   new.block
   format.url output
@@ -995,6 +1011,7 @@ FUNCTION {booklet}
   new.block
   howpublished "howpublished" bibinfo.check output
   address "address" bibinfo.check output
+  format.isbn output
   format.book.pages output
   new.block
   format.url output
@@ -1021,12 +1038,13 @@ FUNCTION {inbook}
   format.btitle "title" output.check
   crossref missing$
     {
-      format.publisher.address output
       format.bvolume output
       format.chapter.pages "chapter and pages" output.check
       new.block
       format.number.series output
+      format.edition output
       new.sentence
+      format.publisher.address output
     }
     {
       format.chapter.pages "chapter and pages" output.check
@@ -1034,7 +1052,10 @@ FUNCTION {inbook}
       format.book.crossref output.nonnull
     }
   if$
-  format.edition output
+  crossref missing$
+    { format.isbn output }
+    'skip$
+  if$
   new.block
   format.url output
   new.block
@@ -1052,12 +1073,13 @@ FUNCTION {incollection}
   new.block
   crossref missing$
     { format.in.ed.booktitle "booktitle" output.check
-      format.publisher.address output
       format.bvolume output
       format.number.series output
+      format.edition output
       format.chapter.pages output
       new.sentence
-      format.edition output
+      format.publisher.address output
+      format.isbn output
     }
     { format.incoll.inproc.crossref output.nonnull
       format.chapter.pages output
@@ -1079,6 +1101,9 @@ FUNCTION {inproceedings}
   new.block
   crossref missing$
     { format.in.ed.booktitle "booktitle" output.check
+      format.bvolume output
+      format.number.series output
+      format.pages output
       new.sentence
       publisher empty$
         { format.organization.address output }
@@ -1086,9 +1111,7 @@ FUNCTION {inproceedings}
           format.publisher.address output
         }
       if$
-      format.bvolume output
-      format.number.series output
-      format.pages output
+      format.isbn output
     }
     { format.incoll.inproc.crossref output.nonnull
       format.pages output
@@ -1188,6 +1211,7 @@ FUNCTION {proceedings}
       format.publisher.address output
     }
   if$
+  format.isbn output
   new.block
   format.url output
   new.block
@@ -1273,6 +1297,10 @@ FUNCTION {format.lab.names}
                   " " * bbl.etal emphasize *
                 }
                 {
+                  numnames #2 >
+                    { "," * }
+                    'skip$
+                  if$
                   "\&"
                   space.word * t *
                 }
@@ -1365,16 +1393,6 @@ FUNCTION {sort.format.names}
       format.name$ 't :=
       nameptr #1 >
         {
-          nameptr #0
-          #10 +
-          #1 + =
-          numnames #0
-          #10 +
-          > and
-            { "others" 't :=
-              #1 'namesleft := }
-            'skip$
-          if$
           "   "  *
           namesleft #1 = t "others" = and
             { "zzzzz" 't := }
@@ -1547,8 +1565,7 @@ FUNCTION {begin.bib}
   write$ newline$
   "\providecommand{\url}[1]{\texttt{#1}}"
   write$ newline$
-  %"\providecommand{\urlprefix}{Available at: }" %english
-  "\providecommand{\urlprefix}{Disponible en: }"
+  "\providecommand{\urlprefix}{URL }"
   write$ newline$
 }
 EXECUTE {begin.bib}
@@ -1561,4 +1578,4 @@ FUNCTION {end.bib}
 EXECUTE {end.bib}
 %% End of customized bst file
 %%
-%% End of file `ecotropicos.bst'.
+%% End of file `ecotropicos2024.bst'.
