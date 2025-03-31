@@ -50,7 +50,7 @@
 %\paperfield{Journal Section}
 
 %Nombre del editor a cargo
-\papereditor{Dr. Fulano de tal}
+\papereditor{Dr. Fulano de tal \href{https://orcid.org/0000-000X-XXXX-XXXX}{\textcolor{orcidlogocol}{\aiOrcid}} }
 
 %Fecha de recepcion del articulo
 \paperreceived{11-29-2010}
@@ -71,9 +71,12 @@
 
 % Include full author names and degrees, when required by the journal.
 % Use the \authfn to add symbols for additional footnotes and present addresses, if any. Usually start with 1 for notes about author contributions; then continuing with 2 etc if any author has a different present address.
-\author[1\authfn{1}]{Author One PhD
+\author[1\authfn{1}]{
+\href{http://orcid.org/0000-000X-XXXX-XXXX}
+{Author One PhD
 	\href{http://orcid.org/0000-0000-0000-0000}
-    {\textcolor{orcidlogocol}{\aiOrcid}}}
+    {\textcolor{orcidlogocol}{\aiOrcid}}
+    }}
 
 \author[2\authfn{1}]{Author A.~Two MD}
 \author[2\authfn{2}]{Author Three PhD}
@@ -83,7 +86,9 @@
 %\contrib[\authfn{1}]{Equally contributing authors.}
 
 % Include full affiliation details for all authors
-\affil[1]{Department, Institution, City, State or Province, Postal Code, Country}
+\affil[1]{
+\href{https://ror.org/XXXXXXXXX}{Department, Institution, City, State or Province, Postal Code, Country {\aiROR}}
+}
 \affil[2]{Department, Institution, City, State or Province, Postal Code, Country}
 
 \corraddress{Author One PhD, Department, Institution, City, State or Province, Postal Code, Country}
